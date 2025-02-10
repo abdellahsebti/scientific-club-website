@@ -178,7 +178,7 @@ export default function Home() {
             reality. Together, well transform innovation into success!
           </p>
           <Link
-            href="/join-us"
+            href="/signup"
             className="inline-block px-8 py-3 bg-secondary text-primary font-medium rounded-md shadow-md hover:bg-secondary-dark transition-colors"
           >
             Get Started
