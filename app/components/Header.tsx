@@ -46,10 +46,10 @@ const Header = () => {
             </Link>
 
             <Link
-              href="/join-us"
+              href="/login"
               className="relative inline-flex items-center px-5 py-2.5 text-sm font-medium text-primary bg-secondary rounded-lg hover:bg-secondary-dark focus:outline-none focus:ring-2 focus:ring-secondary-light transition-all shadow-lg shadow-secondary/20 hover:shadow-xl"
             >
-              <span className="relative z-10">Join Now</span>
+              <span className="relative z-10">LogIn</span>
               <span className="absolute inset-0 bg-secondary rounded-lg opacity-0 hover:opacity-100 transition-opacity"></span>
             </Link>
           </div>
