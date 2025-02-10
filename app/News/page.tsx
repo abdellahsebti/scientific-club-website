@@ -42,7 +42,7 @@ export default function NewsPage() {
                     Our Club Wins National Science Award!
                   </h3>
                   <p className="text-lg text-gray-400 mb-6">
-                    Learn about our club's recent achievement in the national
+                    Learn about our clubs recent achievement in the national
                     science competition.
                   </p>
                   <button className="inline-block py-2 px-4 bg-secondary hover:bg-secondary-light text-text font-medium rounded-md transition duration-300">
