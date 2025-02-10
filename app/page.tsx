@@ -28,7 +28,7 @@ export default function Home() {
               resources.
             </p>
             <Link
-              href="/join-us"
+              href="/signup"
               className="inline-block px-6 py-3 bg-secondary text-primary font-medium rounded-md shadow-md hover:bg-secondary-dark transition-colors"
             >
               Join Our Club

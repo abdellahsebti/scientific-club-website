@@ -119,7 +119,7 @@ export default function NewsPage() {
               Become part of our vibrant science and technology club. Participate
               in events, collaborate on projects, and make an impact.
             </p>
-            <Link href="/join-us" passHref>
+            <Link href="/signup" passHref>
               <button className="inline-block py-3 px-6 bg-secondary hover:bg-secondary-light text-primary font-medium rounded-md shadow-secondary-glow transition duration-300">
                 Join Us Now
               </button>
