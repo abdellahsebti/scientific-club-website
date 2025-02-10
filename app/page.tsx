@@ -48,14 +48,14 @@ export default function Home() {
               <p className="text-lg text-text">
                 At the Nanotech Innovation Club, we believe in empowering
                 individuals with groundbreaking ideas in nanotechnology and
-                related fields. Whether you're a student or an enthusiast, we
+                related fields. Whether youre a student or an enthusiast, we
                 provide the platform, resources, and expertise to transform your
                 vision into a thriving startup.
               </p>
             </div>
             <div>
               <p className="text-lg text-text">
-                Partnering with the school's incubator and a state-of-the-art
+                Partnering with the schools incubator and a state-of-the-art
                 fablab, we guide participants through a four-stage process:
                 idea submission, research, financial planning, and prototype
                 development. Once completed, we connect you with investors and
@@ -175,7 +175,7 @@ export default function Home() {
           <h2 className="text-3xl font-bold mb-6">Ready to Innovate?</h2>
           <p className="text-lg mb-8">
             Join us today and take the first step toward turning your idea into a
-            reality. Together, we'll transform innovation into success!
+            reality. Together, well transform innovation into success!
           </p>
           <Link
             href="/join-us"
