@@ -104,7 +104,7 @@ const Footer = () => {
         {/* Copyright Notice */}
         <div className="mt-10 border-t border-gray-700 pt-6 text-center">
           <p className="text-sm">
-            &copy; {new Date().getFullYear()} Epiphny. All rights
+            &copy; {new Date().getFullYear()} Epiphany Nanotech Club. All rights
             reserved.
           </p>
         </div>
