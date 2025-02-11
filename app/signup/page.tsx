@@ -14,38 +14,37 @@ export default function SignUpPage() {
   const [success, setSuccess] = useState("");
 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+  
     // Clear previous messages
     setError("");
     setSuccess("");
-
+  
     // Validate password confirmation
     if (password !== confirmPassword) {
       return setError("Passwords do not match.");
     }
-
+  
     try {
       const response = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-
+  
       const data = await response.json();
-
+  
       if (response.ok) {
         setSuccess(data.message);
       } else {
-        setError(data.message);
+        setError(data.message || "An unexpected error occurred.");
       }
     } catch (error) {
-      console.error(error);
+      console.error("Frontend error:", error); // Log the error for debugging
       setError("An unexpected error occurred.");
     }
   };
-
    return(
     <>
       <Header />
