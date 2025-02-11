@@ -1,8 +1,52 @@
+"use client"; 
+
+import { useState } from "react";
+import * as React from 'react';
+import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 export default function SignUpPage() {
-  return (
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    // Clear previous messages
+    setError("");
+    setSuccess("");
+
+    // Validate password confirmation
+    if (password !== confirmPassword) {
+      return setError("Passwords do not match.");
+    }
+
+    try {
+      const response = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSuccess(data.message);
+      } else {
+        setError(data.message);
+      }
+    } catch (error) {
+      console.error(error);
+      setError("An unexpected error occurred.");
+    }
+  };
+
+   return(
     <>
       <Header />
       <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-primary-dark text-text">
@@ -10,7 +54,12 @@ export default function SignUpPage() {
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
             Create Your Account
           </h1>
-          <form>
+
+          {/* Error or Success Message */}
+          {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+          {success && <p className="text-green-500 text-center mb-4">{success}</p>}
+
+          <form onSubmit={handleSubmit}>
             {/* Email Field */}
             <div className="mb-4">
               <label htmlFor="email" className="block text-text mb-2">
@@ -19,10 +68,14 @@ export default function SignUpPage() {
               <input
                 type="email"
                 id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="your.email@example.com"
                 className="w-full px-4 py-2 bg-transparent border border-gray-700 rounded-md text-text focus:border-secondary transition duration-300"
+                required
               />
             </div>
+
             {/* Password Field */}
             <div className="mb-4">
               <label htmlFor="password" className="block text-text mb-2">
@@ -31,10 +84,14 @@ export default function SignUpPage() {
               <input
                 type="password"
                 id="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
                 className="w-full px-4 py-2 bg-transparent border border-gray-700 rounded-md text-text focus:border-secondary transition duration-300"
+                required
               />
             </div>
+
             {/* Confirm Password Field */}
             <div className="mb-6">
               <label htmlFor="confirmPassword" className="block text-text mb-2">
@@ -43,10 +100,14 @@ export default function SignUpPage() {
               <input
                 type="password"
                 id="confirmPassword"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
                 placeholder="Confirm your password"
                 className="w-full px-4 py-2 bg-transparent border border-gray-700 rounded-md text-text focus:border-secondary transition duration-300"
+                required
               />
             </div>
+
             {/* Sign Up Button */}
             <button
               type="submit"
@@ -55,15 +116,15 @@ export default function SignUpPage() {
               Sign Up
             </button>
           </form>
+
           {/* Login Link */}
           <p className="text-center mt-6 text-gray-400">
             Already have an account?{" "}
-            <a
-              href="/login"
-              className="text-secondary hover:text-secondary-light transition duration-300"
-            >
-              Login
-            </a>
+            <Link href="/login">
+              <span className="text-secondary hover:text-secondary-light transition duration-300">
+                Login
+              </span>
+            </Link>
           </p>
         </div>
       </main>
