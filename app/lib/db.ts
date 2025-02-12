@@ -22,5 +22,5 @@ if (process.env.NODE_ENV === "development") {
 
 export async function connectToDatabase() {
   const client = await clientPromise;
-  return client.db("epiphinydatabase"); // Replace with your database name
+  return client.db("epiphinydatabase"); 
 }
