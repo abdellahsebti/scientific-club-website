@@ -2,6 +2,7 @@
 import Header from "../components/Header"; 
 import Footer from "../components/Footer"; 
 import Image from "next/image";
+import * as React from "react";
 
 const AboutPage = () => {
   return (
@@ -18,9 +19,7 @@ const AboutPage = () => {
               About Our Scientific Club
             </h1>
             <p className="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto mb-12">
-              Welcome to our vibrant community of scientists, researchers, and
-              enthusiasts dedicated to advancing knowledge in science and
-              technology. Join us on this exciting journey of discovery!
+            We are a scientific club at the National Higher School of Nanoscience and Nanotechnology, dedicated to entrepreneurship and innovation. Our mission is to empower engineers by providing the resources, support, and guidance they need to embark on their entrepreneurial journey.
             </p>
           </div>
         </section>

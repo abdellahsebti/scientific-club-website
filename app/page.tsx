@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Link from "next/link";
 import Image from "next/image";
+import * as React from "react";
 
 export default function Home() {
   return (
@@ -22,10 +23,7 @@ export default function Home() {
               Transform Your Nanotech Ideas into Startups
             </h1>
             <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-8">
-              Welcome to our Nanotech Innovation Club! We help students and
-              enthusiasts turn their innovative ideas into successful startups
-              through structured guidance, expert mentorship, and cutting-edge
-              resources.
+            Epiphany is a club about innovation and entrepreneurship at the national higher school of nanoscience and nanotechnology. Our aim is to transform innovative ideas into functional startups by providing guidance, resources and expertise to our members.
             </p>
             <Link
               href="/signup"
@@ -185,9 +183,7 @@ export default function Home() {
         Discover Our Magazine
       </h2>
       <p className="text-lg text-gray-400 mb-8">
-        Dive into our latest issue filled with fascinating articles, in-depth
-        analysis, and exclusive interviews. Stay updated with the latest trends
-        in science and technology.
+      Explore our magazine now to discover the latest breakthroughs in nanotechnology research, stay updated on school news, and delve into the business side of nanotechnology—including startups, partnerships, and global investments.
       </p>
       <Link
         href="/"
@@ -229,12 +225,11 @@ export default function Home() {
         Welcome to Our Blog
       </h2>
       <p className="text-lg text-text-400 mb-8">
-        Our blog is your go-to source for insightful articles, expert opinions,
-        and the latest updates in the world of science and technology. Join the
-        conversation and stay informed.
+       
+Our blog empowers students by providing a platform to share their stories and experiences, giving them a voice and agency. It fosters a space for expression, connection, and learning, allowing others to discover relatable insights and valuable lessons.
       </p>
       <Link
-        href="/blog"
+        href="/"
         className="inline-block py-3 px-6 bg-secondary hover:bg-secondary-light text-primary font-medium rounded-md shadow-secondary-glow transition duration-300"
       >
         Read Our Latest Posts
