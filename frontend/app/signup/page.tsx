@@ -1,7 +1,7 @@
-"use client"; 
+"use client";
 
 import { useState } from "react";
-import * as React from 'react';
+import * as React from "react";
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -13,39 +13,44 @@ export default function SignUpPage() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-  
+
     // Clear previous messages
     setError("");
     setSuccess("");
-  
+
     // Validate password confirmation
     if (password !== confirmPassword) {
       return setError("Passwords do not match.");
     }
-  
+
     try {
-      const response = await fetch("/api/auth/signup", {
+      // Call the Express backend signup endpoint
+      const response = await fetch("http://localhost:4000/api/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
       });
-  
+
       const data = await response.json();
-  
+
       if (response.ok) {
         setSuccess(data.message);
+        // Optionally, clear the form fields:
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
       } else {
-        setError(data.message || "An unexpected error occurred.");
+        setError(data.error || "An unexpected error occurred.");
       }
-    } catch (error) {
-      console.error("Frontend error:", error); // Log the error for debugging
+    } catch (err) {
+      console.error("Frontend error:", err);
       setError("An unexpected error occurred.");
     }
   };
-   return(
+
+  return (
     <>
       <Header />
       <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-primary-dark text-text">

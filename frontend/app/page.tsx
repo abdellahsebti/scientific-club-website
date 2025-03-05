@@ -148,7 +148,7 @@ export default function Home() {
       {/* Image (Right Side) */}
       <div className="md:w-1/2">
         <Image
-          src="/activities-image.jpg" // Replace with your actual image path
+          src="/activities-image.jpg" 
           alt="Activities"
           width={500}
           height={300}
@@ -197,7 +197,7 @@ export default function Home() {
     {/* Image (Right Side) */}
     <div className="relative w-full md:w-1/2">
       <Image
-        src="/magazine.png" // Replace with your actual image path
+        src="/magazine.png" 
         alt="Magazine Cover"
         layout="fill"
         objectFit="cover"
@@ -211,10 +211,10 @@ export default function Home() {
     {/* Image (Left Side) */}
     <div className="relative w-full md:w-1/2 p-4 md:p-8 flex items-center justify-center">
       <Image
-        src="/Mobileapp.png" // Replace with your actual image path
+        src="/Mobileapp.png" 
         alt="Blog Cover"
-        width={500} // Set the original width of the image
-        height={300} // Set the original height of the image
+        width={500} 
+        height={300}
         className="rounded-md max-w-full max-h-full object-cover"
       />
     </div>
