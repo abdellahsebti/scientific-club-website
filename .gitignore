@@ -1,4 +1,3 @@
 /backend/node_modules
-/.next/server
-/.next
+
 /node_modules
