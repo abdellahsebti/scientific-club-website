@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 "use client";
 
 import { useState } from "react";
@@ -34,12 +35,21 @@ export default function ForgotPasswordPage() {
     }
   };
 
+=======
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import * as React from 'react';
+
+
+export default function ForgotPasswordPage() {
+>>>>>>> parent of e2c35b3 (backend express)
   return (
     <>
       <Header />
       <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-primary-dark text-text">
         <div className="max-w-md w-full p-8 bg-white/5 rounded-lg shadow-md">
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
+<<<<<<< HEAD
             Forgot Password
           </h1>
 
@@ -50,12 +60,24 @@ export default function ForgotPasswordPage() {
           <form onSubmit={handleSubmit}>
             {/* Email Field */}
             <div className="mb-4">
+=======
+            Forgot Your Password?
+          </h1>
+          <p className="text-center text-gray-400 mb-8">
+            Enter your email address below, and we&apos;ll send you instructions
+            to reset your password.
+          </p>
+          <form>
+            {/* Email Field */}
+            <div className="mb-6">
+>>>>>>> parent of e2c35b3 (backend express)
               <label htmlFor="email" className="block text-text mb-2">
                 Email Address
               </label>
               <input
                 type="email"
                 id="email"
+<<<<<<< HEAD
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your.email@example.com"
@@ -64,6 +86,12 @@ export default function ForgotPasswordPage() {
               />
             </div>
 
+=======
+                placeholder="your.email@example.com"
+                className="w-full px-4 py-2 bg-transparent border border-gray-700 rounded-md text-text focus:border-secondary transition duration-300"
+              />
+            </div>
+>>>>>>> parent of e2c35b3 (backend express)
             {/* Reset Password Button */}
             <button
               type="submit"
@@ -72,6 +100,7 @@ export default function ForgotPasswordPage() {
               Reset Password
             </button>
           </form>
+<<<<<<< HEAD
 
           {/* Back to Login Link */}
           <p className="text-center mt-6 text-gray-400">
@@ -81,10 +110,25 @@ export default function ForgotPasswordPage() {
                 Login
               </span>
             </Link>
+=======
+          {/* Back to Login Link */}
+          <p className="text-center mt-6 text-gray-400">
+            Remember your password?{" "}
+            <a
+              href="/login"
+              className="text-secondary hover:text-secondary-light transition duration-300"
+            >
+              Back to Login
+            </a>
+>>>>>>> parent of e2c35b3 (backend express)
           </p>
         </div>
       </main>
       <Footer />
     </>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> parent of e2c35b3 (backend express)

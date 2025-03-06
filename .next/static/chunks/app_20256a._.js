@@ -516,7 +516,7 @@ function SignUpPage() {
         }
         try {
             // Call the Express backend signup endpoint
-            const response = await fetch("http://localhost:4000/api/signup", {
+            const response = await fetch("/api/signup", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

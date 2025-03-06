@@ -1,38 +1,7 @@
-'use client';
-
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import React, { useState } from 'react';
-
+import * as React from 'react';
 export default function LoginPage() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [message, setMessage] = useState('');
-
-  // Handler for the form submission
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    try {
-      const res = await fetch('http://localhost:4000/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await res.json();
-
-      if (res.ok) {
-        setMessage(data.message); // e.g., "Login successful"
-      } else {
-        setMessage(data.error || 'Login failed');
-      }
-    } catch (error) {
-      console.error('Error during login:', error);
-      setMessage('An error occurred. Please try again later.');
-    }
-  };
-
   return (
     <>
       <Header />
@@ -41,7 +10,7 @@ export default function LoginPage() {
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
             Login to Your Account
           </h1>
-          <form onSubmit={handleSubmit}>
+          <form>
             {/* Email Field */}
             <div className="mb-4">
               <label htmlFor="email" className="block text-text mb-2">
@@ -51,8 +20,6 @@ export default function LoginPage() {
                 type="email"
                 id="email"
                 placeholder="your.email@example.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
                 className="w-full px-4 py-2 bg-transparent border border-gray-700 rounded-md text-text focus:border-secondary transition duration-300"
               />
             </div>
@@ -65,8 +32,6 @@ export default function LoginPage() {
                 type="password"
                 id="password"
                 placeholder="Enter your password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
                 className="w-full px-4 py-2 bg-transparent border border-gray-700 rounded-md text-text focus:border-secondary transition duration-300"
               />
             </div>
@@ -87,10 +52,6 @@ export default function LoginPage() {
               Login
             </button>
           </form>
-          {/* Display server message */}
-          {message && (
-            <p className="text-center mt-4 text-red-400">{message}</p>
-          )}
           {/* Sign Up Link */}
           <p className="text-center mt-6 text-gray-400">
             Don&apos;t have an account?{" "}
